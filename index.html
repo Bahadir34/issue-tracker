@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Issue Tracker</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <section id="main-section" class="">
+        <div id="main-section-open" class="section">
+          <div id="main-section-open-top">
+            <p class="open-label">open</p>
+          </div>
+          <div id="main-section-open-content">
+            <div id="card">
+              <div id="card-top">
+                <i class="bx bxs-bug"></i>
+                <p>Issues</p>
+              </div>
+              <ul>
+                <li>
+                  <p>Name</p>
+                  <div>
+                    <p>Bahadir</p>
+                  </div>
+                </li>
+                <li>
+                  <p>Priority</p>
+                  <div>
+                    <span> <p class="open-label">high</p></span>
+                    <i class="bx bx-caret-down-square"></i>
+                  </div>
+                </li>
+
+                <li>
+                  <p>Assignee</p>
+                  <div id="assignee-side">
+                    <img src="./assets/img/man-1.jpg" alt="" />
+                    <p>xyz.gmail.com</p>
+                    <i class="bx bx-user"></i>
+                  </div>
+                </li>
+                <li>
+                  <p>Reporter</p>
+                  <div id="reporter-side">
+                    <img src="./assets/img/man-2.jpg" alt="" />
+                    <p>xyz.gmail.com</p>
+                    <i class="bx bx-user"></i>
+                  </div>
+                </li>
+                <li>
+                  <p>Opened</p>
+                  <div>
+                    <p>01.04.2025</p>
+                    <i class="bx bx-calendar-event"></i>
+                  </div>
+                </li>
+                <li>
+                  <p>Resolved</p>
+                  <div>
+                    <i class="bx bx-calendar-event calendar"></i>
+                  </div>
+                </li>
+                <li>
+                  <i class="bx bx-plus"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="main-section-open-bottom">
+            <div name="add-1" id="main-section-open-bottom-add">
+              <i name="add-1" class="bx bx-plus"></i>
+              <p name="add-1">Create New Record</p>
+            </div>
+            <p id="add-1-count">2 cards</p>
+          </div>
+        </div>
+        <div id="main-section-in-progress" class="section">
+          <div id="main-section-in-progress-top">
+            <p class="in-progress-label">in progress</p>
+          </div>
+          <div id="main-section-in-progress-content"></div>
+          <div id="main-section-in-progress-bottom">
+            <div name="add-2" id="main-section-in-progress-bottom-add">
+              <i name="add-2" class="bx bx-plus"></i>
+              <p name="add-2">Create New Record</p>
+            </div>
+            <p id="add-2-count">2 cards</p>
+          </div>
+        </div>
+        <div id="main-section-closed" class="section">
+          <div id="main-section-closed-top">
+            <p class="closed-label">closed</p>
+          </div>
+          <div id="main-section-closed-content"></div>
+          <div id="main-section-closed-bottom">
+            <div name="add-3" id="main-section-closed-bottom-add">
+              <i name="add-3" class="bx bx-plus"></i>
+              <p name="add-3">Create New Record</p>
+            </div>
+            <p id="add-3-count">2 cards</p>
+          </div>
+        </div>
+        <div id="main-section-wont-fix" class="section">
+          <div id="main-section-wont-fix-top">
+            <p class="wont-fix-label">won't fix</p>
+          </div>
+          <div id="main-section-wont-fix-content"></div>
+          <div id="main-section-wont-fix-bottom">
+            <div name="add-4" id="main-section-wont-fix-bottom-add">
+              <i name="add-4" class="bx bx-plus"></i>
+              <p name="add-4">Create New Record</p>
+            </div>
+            <p id="add-4-count">2 cards</p>
+          </div>
+        </div>
+      </section>
+      <section id="form-section" class="passive">
+        <div id="add-form-section" class="active">
+          <form action="">
+            <h3>Add Issue Form</h3>
+            <input type="text" placeholder="Name" id="name" />
+
+            <input
+              type="email"
+              name=""
+              id="email"
+              placeholder="example@xyz.com"
+            />
+            <div id="priority">
+              <label for="">Select Priority : </label>
+              <div id="option">
+                <p id="low" class="label wont-fix-label">low</p>
+                <p id="medium" class="label in-progress-label">medium</p>
+                <p id="high" class="label open-label">high</p>
+              </div>
+            </div>
+            <div id="form-buttons">
+              <button id="save-button" class="btn-save">Save</button>
+              <button id="cancel-button" class="btn-cancel">Cancel</button>
+            </div>
+          </form>
+          <div id="cancel-form">
+            <i class="bx bx-x-circle"></i>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

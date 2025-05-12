@@ -1,0 +1,225 @@
+@import "./variables";
+@import "./mixins";
+@import "./commons";
+@import "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+%shadow {
+  box-shadow: 7px 8px 15px lightgray;
+}
+
+p {
+  letter-spacing: 0.6px;
+  color: $__text-color;
+}
+
+.open-label {
+  display: inline-block;
+  color: $__text-color;
+  background-color: $__open-label-color;
+  padding: 0.3rem 0.5rem;
+  border-radius: 2rem;
+  margin-left: 0.3rem;
+
+  @extend %shadow;
+}
+
+.closed-label {
+  display: inline-block;
+  color: $__text-color;
+  background-color: $__closed-color;
+  padding: 0.3rem 0.5rem;
+  border-radius: 2rem;
+  margin-left: 0.3rem;
+
+  @extend %shadow;
+}
+
+.in-progress-label {
+  display: inline-block;
+  color: $__text-color;
+  background-color: $__in-progress-color;
+  padding: 0.3rem 0.5rem;
+  border-radius: 2rem;
+  margin-left: 0.3rem;
+
+  @extend %shadow;
+}
+
+.wont-fix-label {
+  display: inline-block;
+  color: $__text-color;
+  background-color: $__wont-fix-color;
+  padding: 0.3rem 0.5rem;
+  border-radius: 2rem;
+  margin-left: 0.3rem;
+
+  @extend %shadow;
+}
+
+.section {
+  width: 20rem;
+  height: auto;
+  border: solid 1px lightgrey;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+}
+
+%full-table {
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+%cart {
+  #card {
+    max-height: 90%;
+    margin: 1rem;
+    border: solid 1px lightgrey;
+    border-radius: 0.5rem;
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.2rem;
+
+      li {
+        padding: 1rem 0.5rem;
+        margin: 0 0.7rem;
+        border-bottom: solid 1px lightgrey;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+
+        #assignee-side {
+          img {
+            width: 30px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 5px;
+          }
+        }
+
+        #reporter-side {
+          img {
+            width: 30px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 5px;
+          }
+        }
+
+        > p {
+          font-style: italic;
+        }
+
+        p {
+          flex: 1;
+        }
+
+        div {
+          flex: 2;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .calendar {
+            margin-left: auto;
+          }
+        }
+
+        &:last-child {
+          border-bottom: none;
+
+          i {
+            color: $__green-color;
+            font-size: 1.3rem;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    &-top {
+      background-color: $__tab-color;
+      padding: 0.6rem;
+      border-top-right-radius: 0.5rem;
+      border-top-left-radius: 0.5rem;
+      border-bottom: solid 1px lightgrey;
+      i {
+        color: $__red-color;
+      }
+      p {
+        color: $__text-color;
+      }
+    }
+  }
+}
+
+%section-frame {
+  min-width: 25rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+%frame-top {
+  background-color: $__tab-color;
+  padding: 0.6rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom: solid 1px lightgrey;
+}
+
+%frame-bottom {
+  background-color: $__tab-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  padding: 0.5rem;
+  border-top: solid 1px lightgrey;
+
+  p {
+    color: $__icon-color;
+    font-size: 0.7rem;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    i {
+      color: $__green-color;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    p {
+      color: $__green-color;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.blur {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}

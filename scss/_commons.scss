@@ -1,0 +1,198 @@
+#container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  #main-section {
+    overflow-x: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(4, 25rem);
+    align-items: flex-start;
+    justify-content: center;
+    margin: 2rem 5rem;
+    gap: 2rem;
+    position: relative;
+    height: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include laptop {
+      justify-content: unset;
+      margin: 2rem 2rem;
+    }
+    &-open {
+      @extend %section-frame;
+      
+      height: auto;
+
+      &-top {
+        @extend %frame-top;
+      }
+      &-content {
+        min-height: 2rem;
+
+        @extend %cart;
+      }
+
+      &-bottom {
+        @extend %frame-bottom;
+      }
+    }
+
+    &-in-progress {
+      @extend %section-frame;
+      height: auto;
+
+      &-top {
+        @extend %frame-top;
+      }
+
+      &-content {
+        height: 100%;
+        min-height: 2rem;
+        @extend %cart;
+      }
+
+      &-bottom {
+        @extend %frame-bottom;
+      }
+    }
+
+    &-closed {
+      @extend %section-frame;
+      height: auto;
+
+      &-top {
+        @extend %frame-top;
+      }
+      &-content {
+        height: 100%;
+        min-height: 2rem;
+        @extend %cart;
+      }
+      &-bottom {
+        @extend %frame-bottom;
+      }
+    }
+
+    &-wont-fix {
+      @extend %section-frame;
+      height: auto;
+
+      &-top {
+        @extend %frame-top;
+      }
+      &-content {
+        height: 100%;
+        min-height: 2rem;
+        @extend %cart;
+      }
+      &-bottom {
+        @extend %frame-bottom;
+      }
+    }
+  }
+  #form-section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    #add-form-section.active {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 2rem;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 1rem;
+        h3 {
+          color: $__text-color;
+        }
+        input {
+          outline: none;
+          padding: 0.5rem;
+        }
+
+        #priority {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          label {
+            color: $__text-color;
+          }
+
+          #option {
+            @include phone {
+              display: flex;
+              flex-direction: column;
+              gap: 0.7rem;
+            }
+            p {
+              cursor: pointer;
+              font-size: 0.8rem;
+              opacity: 0.5;
+            }
+
+            p.selected {
+              opacity: 1;
+            }
+          }
+        }
+        #form-buttons {
+          align-self: flex-end;
+          display: flex;
+          gap: 1rem;
+          button {
+            padding: 0.6rem 1rem;
+            border-radius: 5px;
+            min-width: 5rem;
+            color: white;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+          .btn-save {
+            background-color: $__green-color;
+          }
+          .btn-cancel {
+            background-color: $__red-color;
+          }
+        }
+      }
+      #cancel-form {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        i {
+          color: $__red-color;
+        }
+      }
+    }
+  }
+  #form-section.passive {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+  }
+}

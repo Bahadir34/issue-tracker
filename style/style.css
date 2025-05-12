@@ -1,0 +1,367 @@
+/* BASIC COLORS - START */
+/* BASIC COLORS - END */
+/* LABEL COLORS - START */
+/* LABEL COLORS - END */
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+#container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#container #main-section {
+  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(4, 25rem);
+  align-items: flex-start;
+  justify-content: center;
+  margin: 2rem 5rem;
+  gap: 2rem;
+  position: relative;
+  height: auto;
+}
+#container #main-section::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 1704px) {
+  #container #main-section {
+    justify-content: unset;
+    margin: 2rem 2rem;
+  }
+}
+#container #main-section-open {
+  height: auto;
+}
+#container #main-section-open-content {
+  min-height: 2rem;
+}
+#container #main-section-in-progress {
+  height: auto;
+}
+#container #main-section-in-progress-content {
+  height: 100%;
+  min-height: 2rem;
+}
+#container #main-section-closed {
+  height: auto;
+}
+#container #main-section-closed-content {
+  height: 100%;
+  min-height: 2rem;
+}
+#container #main-section-wont-fix {
+  height: auto;
+}
+#container #main-section-wont-fix-content {
+  height: 100%;
+  min-height: 2rem;
+}
+#container #form-section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+#container #form-section #add-form-section.active {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+#container #form-section #add-form-section.active form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+#container #form-section #add-form-section.active form h3 {
+  color: rgb(24, 38, 56);
+}
+#container #form-section #add-form-section.active form input {
+  outline: none;
+  padding: 0.5rem;
+}
+#container #form-section #add-form-section.active form #priority {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#container #form-section #add-form-section.active form #priority label {
+  color: rgb(24, 38, 56);
+}
+@media (max-width: 740px) {
+  #container #form-section #add-form-section.active form #priority #option {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}
+#container #form-section #add-form-section.active form #priority #option p {
+  cursor: pointer;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+#container #form-section #add-form-section.active form #priority #option p.selected {
+  opacity: 1;
+}
+#container #form-section #add-form-section.active form #form-buttons {
+  align-self: flex-end;
+  display: flex;
+  gap: 1rem;
+}
+#container #form-section #add-form-section.active form #form-buttons button {
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  min-width: 5rem;
+  color: white;
+}
+#container #form-section #add-form-section.active form #form-buttons button:hover {
+  opacity: 0.8;
+}
+#container #form-section #add-form-section.active form #form-buttons .btn-save {
+  background-color: rgb(67, 168, 118);
+}
+#container #form-section #add-form-section.active form #form-buttons .btn-cancel {
+  background-color: rgb(192, 27, 32);
+}
+#container #form-section #add-form-section.active #cancel-form {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+#container #form-section #add-form-section.active #cancel-form i {
+  color: rgb(192, 27, 32);
+}
+#container #form-section.passive {
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+p {
+  display: inline-block;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+.wont-fix-label, .in-progress-label, .closed-label, .open-label {
+  box-shadow: 7px 8px 15px lightgray;
+}
+
+p {
+  letter-spacing: 0.6px;
+  color: rgb(24, 38, 56);
+}
+
+.open-label {
+  display: inline-block;
+  color: rgb(24, 38, 56);
+  background-color: rgb(240, 192, 193);
+  padding: 0.3rem 0.5rem;
+  border-radius: 2rem;
+  margin-left: 0.3rem;
+}
+
+.closed-label {
+  display: inline-block;
+  color: rgb(24, 38, 56);
+  background-color: rgb(254, 240, 193);
+  padding: 0.3rem 0.5rem;
+  border-radius: 2rem;
+  margin-left: 0.3rem;
+}
+
+.in-progress-label {
+  display: inline-block;
+  color: rgb(24, 38, 56);
+  background-color: rgb(250, 224, 195);
+  padding: 0.3rem 0.5rem;
+  border-radius: 2rem;
+  margin-left: 0.3rem;
+}
+
+.wont-fix-label {
+  display: inline-block;
+  color: rgb(24, 38, 56);
+  background-color: rgb(209, 231, 202);
+  padding: 0.3rem 0.5rem;
+  border-radius: 2rem;
+  margin-left: 0.3rem;
+}
+
+.section {
+  width: 20rem;
+  height: auto;
+  border: solid 1px lightgrey;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+}
+
+#container #main-section-open-content #card, #container #main-section-in-progress-content #card, #container #main-section-closed-content #card, #container #main-section-wont-fix-content #card {
+  max-height: 90%;
+  margin: 1rem;
+  border: solid 1px lightgrey;
+  border-radius: 0.5rem;
+}
+#container #main-section-open-content #card ul, #container #main-section-in-progress-content #card ul, #container #main-section-closed-content #card ul, #container #main-section-wont-fix-content #card ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.2rem;
+}
+#container #main-section-open-content #card ul li, #container #main-section-in-progress-content #card ul li, #container #main-section-closed-content #card ul li, #container #main-section-wont-fix-content #card ul li {
+  padding: 1rem 0.5rem;
+  margin: 0 0.7rem;
+  border-bottom: solid 1px lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+#container #main-section-open-content #card ul li #assignee-side img, #container #main-section-in-progress-content #card ul li #assignee-side img, #container #main-section-closed-content #card ul li #assignee-side img, #container #main-section-wont-fix-content #card ul li #assignee-side img {
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 5px;
+}
+#container #main-section-open-content #card ul li #reporter-side img, #container #main-section-in-progress-content #card ul li #reporter-side img, #container #main-section-closed-content #card ul li #reporter-side img, #container #main-section-wont-fix-content #card ul li #reporter-side img {
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 5px;
+}
+#container #main-section-open-content #card ul li > p, #container #main-section-in-progress-content #card ul li > p, #container #main-section-closed-content #card ul li > p, #container #main-section-wont-fix-content #card ul li > p {
+  font-style: italic;
+}
+#container #main-section-open-content #card ul li p, #container #main-section-in-progress-content #card ul li p, #container #main-section-closed-content #card ul li p, #container #main-section-wont-fix-content #card ul li p {
+  flex: 1;
+}
+#container #main-section-open-content #card ul li div, #container #main-section-in-progress-content #card ul li div, #container #main-section-closed-content #card ul li div, #container #main-section-wont-fix-content #card ul li div {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#container #main-section-open-content #card ul li div .calendar, #container #main-section-in-progress-content #card ul li div .calendar, #container #main-section-closed-content #card ul li div .calendar, #container #main-section-wont-fix-content #card ul li div .calendar {
+  margin-left: auto;
+}
+#container #main-section-open-content #card ul li:last-child, #container #main-section-in-progress-content #card ul li:last-child, #container #main-section-closed-content #card ul li:last-child, #container #main-section-wont-fix-content #card ul li:last-child {
+  border-bottom: none;
+}
+#container #main-section-open-content #card ul li:last-child i, #container #main-section-in-progress-content #card ul li:last-child i, #container #main-section-closed-content #card ul li:last-child i, #container #main-section-wont-fix-content #card ul li:last-child i {
+  color: rgb(67, 168, 118);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+#container #main-section-open-content #card-top, #container #main-section-in-progress-content #card-top, #container #main-section-closed-content #card-top, #container #main-section-wont-fix-content #card-top {
+  background-color: rgb(245, 245, 245);
+  padding: 0.6rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom: solid 1px lightgrey;
+}
+#container #main-section-open-content #card-top i, #container #main-section-in-progress-content #card-top i, #container #main-section-closed-content #card-top i, #container #main-section-wont-fix-content #card-top i {
+  color: rgb(192, 27, 32);
+}
+#container #main-section-open-content #card-top p, #container #main-section-in-progress-content #card-top p, #container #main-section-closed-content #card-top p, #container #main-section-wont-fix-content #card-top p {
+  color: rgb(24, 38, 56);
+}
+
+#container #main-section-open, #container #main-section-in-progress, #container #main-section-closed, #container #main-section-wont-fix {
+  min-width: 25rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#container #main-section-open-top, #container #main-section-in-progress-top, #container #main-section-closed-top, #container #main-section-wont-fix-top {
+  background-color: rgb(245, 245, 245);
+  padding: 0.6rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom: solid 1px lightgrey;
+}
+
+#container #main-section-open-bottom, #container #main-section-in-progress-bottom, #container #main-section-closed-bottom, #container #main-section-wont-fix-bottom {
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  padding: 0.5rem;
+  border-top: solid 1px lightgrey;
+}
+#container #main-section-open-bottom p, #container #main-section-in-progress-bottom p, #container #main-section-closed-bottom p, #container #main-section-wont-fix-bottom p {
+  color: rgb(140, 157, 157);
+  font-size: 0.7rem;
+}
+#container #main-section-open-bottom div, #container #main-section-in-progress-bottom div, #container #main-section-closed-bottom div, #container #main-section-wont-fix-bottom div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+#container #main-section-open-bottom div i, #container #main-section-in-progress-bottom div i, #container #main-section-closed-bottom div i, #container #main-section-wont-fix-bottom div i {
+  color: rgb(67, 168, 118);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+#container #main-section-open-bottom div p, #container #main-section-in-progress-bottom div p, #container #main-section-closed-bottom div p, #container #main-section-wont-fix-bottom div p {
+  color: rgb(67, 168, 118);
+  font-size: 0.9rem;
+}
+
+.blur {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
